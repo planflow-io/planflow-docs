@@ -1,0 +1,48 @@
+---
+title: Calculating Schedules
+description: Early and late dates
+---
+
+Calculating schedules in LeanCPM is slightly different than in legacy CPM.
+
+Here are the main differences:
+- Tasks do not have constraints, including “Start as soon as possible”
+- There are only two types of dependencies
+	- **Series**: A blocker must finish before the blocked can start
+	- **Parallel**: A start-start and finish-finish relationship 
+- All Milestones have a “Must Finish On” or “Must Start On” date
+- [[Soft logic]] is driven by resource capacity
+
+## What data is analyzed and processed
+
+Calculating schedules takes the following **inputs** only:
+- The earliest task(s) `start` date
+- All tasks:
+	- duration (in work days)
+	- dependencies/dependents
+		- type (series or parallel)
+		- lag (parallel only)
+- All Milestones:
+	- `must_finish_by` or `must_start_by` date
+
+The following outputs are calculated:
+- All tasks: 
+	- `early_start` `date`
+	- `early_finish` `date`
+	- `late_start` `date`
+	- `late_finish` `date`
+	- `total_float`  `number`
+### What isn’t analyzed or processed
+Let’s be clear. Calculating the schedule doesn’t affect what's shown on the schedule. The tasks shown on the canvas use the `start` and `finish` dates, which have no relation to early or late dates.
+
+Legacy CPM will automatically assign the `early_start` to the start date. Planflow / LeanCPM 
+
+
+Calculating schedules is easy. Here’s how it works.
+
+1. Find the task with the earliest `start`
+2. If there is more than one with the same `start` date, you’ll repeat the process for each.
+3. This start date is now the `early_start` for this task (this only happens with the first task)
+4. Add the task’s duration in work days to find the `early_finish` 
+5. Find the dependents of the task (Series or Parallel), for each dependent:
+	1. Series (FS): 
