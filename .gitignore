@@ -28,8 +28,6 @@ yarn-error.log*
 next-env.d.ts
 
 # Obsidian Files
-/.obsidian
+
 /_private
 /.trash
-# Optional custom CSS
-obsidian.css
