@@ -1,5 +1,7 @@
 {
   "alwaysUpdateLinks": false,
-  "trashOption": "local",
-  "useMarkdownLinks": true
-} 
+  "trashOption": "system",
+  "useMarkdownLinks": true,
+  "attachmentFolderPath": "attachments",
+  "showInlineTitle": false
+}

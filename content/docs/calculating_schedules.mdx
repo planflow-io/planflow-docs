@@ -7,42 +7,93 @@ Calculating schedules in LeanCPM is slightly different than in legacy CPM.
 
 Here are the main differences:
 - Tasks do not have constraints, including “Start as soon as possible”
+- Start & Finish are manually set by the user, they are mostly ignored in calculating the schedule
 - There are only two types of dependencies
-	- **Series**: A blocker must finish before the blocked can start
-	- **Parallel**: A start-start and finish-finish relationship 
-- All Milestones have a “Must Finish On” or “Must Start On” date
+	- **Series**: A blocker must finish before the blocked task can start
+	- **Parallel**: A start-start and finish-finish relationship with an optional lag
+- Milestones have an `early_date` and a `deadline`
+- Milestones are in series with their dependents and dependencies
 - [[Soft logic]] is driven by resource capacity
 
 ## What data is analyzed and processed
 
 Calculating schedules takes the following **inputs** only:
-- The earliest task(s) `start` date
+- Tasks with no dependency:
+	- `expected_start` date
+- Tasks with no dependents:
+	- `expected_finish` date
 - All tasks:
 	- duration (in work days)
 	- dependencies/dependents
 		- type (series or parallel)
 		- lag (parallel only)
 - All Milestones:
-	- `must_finish_by` or `must_start_by` date
+	- `early_date`
+	- `deadline`
 
 The following outputs are calculated:
-- All tasks: 
-	- `early_start` `date`
-	- `early_finish` `date`
-	- `late_start` `date`
-	- `late_finish` `date`
-	- `total_float`  `number`
-### What isn’t analyzed or processed
-Let’s be clear. Calculating the schedule doesn’t affect what's shown on the schedule. The tasks shown on the canvas use the `start` and `finish` dates, which have no relation to early or late dates.
 
-Legacy CPM will automatically assign the `early_start` to the start date. Planflow / LeanCPM 
+| Field              | Type   | Scope              |
+| ------------------ | ------ | ------------------ |
+| `early_start`      | date   | tasks              |
+| `early_finish`     | date   | tasks              |
+| `late_start`       | date   | tasks              |
+| `late_finish`      | date   | tasks              |
+| `priority`         | enum   | tasks & milestones |
+| `total_float`      | number | tasks & milestones |
+| `free_float_start` | number | tasks & milestones |
+| `free_float_end`   | number | tasks & milestones |
+| `early_date`       | date   | milestones         |
+| `deadline`         | date   | milestones         |
 
+
+> Legacy CPM will automatically assign the `early_start` and `early_finish` to the start and finish dates respectively. This is not the case in LeanCPM, instead it is the expected dates, the manual, user-generated dates, or actual dates that are assigned to the start and finish dates. 
 
 Calculating schedules is easy. Here’s how it works.
 
-1. Find the task with the earliest `start`
-2. If there is more than one with the same `start` date, you’ll repeat the process for each.
-3. This start date is now the `early_start` for this task (this only happens with the first task)
-4. Add the task’s duration in work days to find the `early_finish` 
-5. Find the dependents of the task (Series or Parallel), for each dependent:
-	1. Series (FS): 
+## Ignore Completed tasks
+
+In LeanCPM, any task, regardless of Status, who's Start or Finish
+
+
+## Forwards Pass - Calculating Early Dates
+Forward pass first - calculate early dates (the soonest tasks can start/finish)
+1. for all tasks & milestones who start or finish today or earlier:
+	a. set `needs_update` to `true` 
+	b. do not remove existing early dates
+2. for all other tasks find all tasks & milestones without a dependency (predecessor) AND 
+    a. whose `expected_start` & `expected_finish` (user-generated) is after today, for each:
+		set `early_start` to today + 1 work day
+		set `early_finish = early_start + duration`
+	b. whose start is ≤ today AND finish > today
+		set `early_finish = expected_finish` (user-generated)
+3. find all dependents (successors) of tasks from previous step
+    a. for each series dependent (FS):
+	    set `early_start` to dependency's (predecessor's) `early_finish + 1d` (work day)
+    b. for each parallel dependent (SS or SS + Lag):
+	    set `early_start` to dependency's `early_start + lag*` (in workdays)
+    c. for all dependents (series & parallel):
+	    set `early_finish = early_start + duration`
+    d. for all Finish Milestones:
+	    set `early_date` to dependency's `early_finish` (same day, not the day after)
+    e. for all Start Milestones
+	    set `early_date` to dependency's `early_finish + 1d` (work day)
+	f. for tasks dependent on Milestones
+		set `early_start` to dependency's (milestone's) `early_date`
+4. Repeat step 4 until early dates for all tasks & milestones have been calculated
+5. Move onto the Backwards pass to calculate the late dates (the latest tasks can start/finish)
+
+> Tasks who start or finish before today are not calculated
+
+> All milestones dependencies are in series
+
+## Backwards Pass
+> anything that doesn't eventually lead to a milestone has an unknown priority
+1. Set late dates to null
+2. Find all tasks without a dependent (successor)
+	a. for each:
+		set `priority` to `unknown`
+		set  late_finish to finish (user-generated)
+		set late_start = late_finish - duration
+		
+
