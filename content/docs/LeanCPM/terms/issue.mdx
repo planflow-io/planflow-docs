@@ -1,0 +1,20 @@
+---
+title: Issue
+description: Not exactly a task
+---
+Issues are somewhat in-between Tasks & Milestones. Like tasks they have the following fields:
+
+
+| Field                | Description                  |
+| -------------------- | ---------------------------- |
+| Status               |                              |
+| Expected Date        | early finish; user-generated |
+| [Deadline](deadline) | late finish; calculated      |
+| Priority             |                              |
+
+Identified Priority = Successor’s priority  
+In progress Priority = Successors Latest Start - Issue Expected Date - 1d
+
+Expected date = Start date  
+Successors Early Start -1d = Early Finish  
+Successors Late Start -1d = Late Finish

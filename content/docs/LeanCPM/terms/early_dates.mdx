@@ -1,0 +1,25 @@
+---
+title: Early Dates
+description: The soonest possible date a task can start or finish
+---
+These values are [calculated](calculating_schedules.mdx) based on durations and dependencies between all tasks in a project.
+
+## Early Start
+
+`early_start`
+
+The earliest a task can start is based on when its dependencies are finished or started, depending on the dependency type.
+
+## Early Finish
+
+`early_finish`
+
+The earliest a task can *finish* is based on its `early_start` and [duration](duration).
+
+## Milestones
+
+Unlike Tasks, [Milestones](milestone.mdx) have a single `early_date` field. This is the soonest a Milestone can occur. 
+
+<Callout title="Legacy CPM" type="warn">
+ In LeanCPM, there are no “Planned Dates” or “Original Dates“ .
+</Callout>

@@ -1,0 +1,42 @@
+---
+title: Dependencies
+description: aka "Relationships". Blockers and Blocked.
+---
+
+## Dependency Types
+
+One of LeanCPM’s superpowers is in its simplicity.  Two types of dependencies, Series and Parallel, make creating schedules easy and powerful.
+
+### Series
+
+Tasks in a series happen one by one. The first must finish before the second can start.
+
+If you’re familiar with legacy CPM, this is a simple Finish-to-Start relationship.
+
+Lag, the desired time between the finish and start, is not supported in series.
+
+### Parallel
+Tasks in parallel happen at the same time. However, there is always a leader; the first must start before the second can start, AND the first must finish before the second can finish.
+
+If you're familiar with legacy CPM, this is a Start-to-Start (SS) AND a Finish-to-Finish relationship.
+
+Lag can be added to the start side of the parallel. 
+
+
+## Dependency Sides
+
+Each Dependency has two sides:
+1. The blocker
+2. The blocked
+
+## The blocker
+The blocker, known as the “predecessor” in legacy CPM, is the task that 
+
+<Callout title="Constraints in Legacy CPM" type="info">
+Activities are 
+</Callout>
+
+
+## FAQ
+How do I show concrete curing? I usually use an FS+lag, but now I can't?
+You can! We recommend adding an extra day for curing in your `Pour and Finish` Task

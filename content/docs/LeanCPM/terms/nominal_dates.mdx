@@ -1,8 +1,17 @@
 ---
 title: Nominal dates
+description: What everyone sees
 ---
-# Nominal Dates
-The dates most often referenced when discussing scheduling.
+Start and Finish dates. LeanCPM, like legacy CPM, has many date fields for each task, as seen in this guide. The nominal dates are the bottom line, the most important dates, the dates you share with your subcontractors and with your clients. 
 
-## Start
-When the task's [status](status.mdx) is `started`, `finished` or `completed`, the value `start` will be set to 
+All other dates are supplemental information for you as a planner.
+
+The Start and Finish, known as the nominal dates, are usually driven by the [expected dates](terms/expected_dates).
+
+### Start
+
+When the task’s [status](status) is not set to `started`, `finished`, or `completed`, the value `start` will be set to the [expected start](expected_dates#expected-start) date. Otherwise, it will be set to the [actual start](actual_dates) date.
+
+## Finish
+
+When the task’s [status](status) is not set to `finished` or `completed`, the value `finish` will be set to the [expected finish](expected_dates#expected-finish) date. Otherwise, it will be set to the [actual finish](actual_finish) date.

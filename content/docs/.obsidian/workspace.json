@@ -13,12 +13,22 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LeanCPM/terms/nominal_dates.mdx",
+                "file": "LeanCPM/calculating_schedules.mdx",
                 "mode": "source",
-                "source": false
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": true,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": true,
+                  "unlinkedCollapsed": true
+                }
               },
               "icon": "lucide-file",
-              "title": "nominal_dates"
+              "title": "calculating_schedules"
             }
           }
         ]
@@ -41,7 +51,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -53,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "[]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 270.5
   },
   "right": {
     "id": "9c2109e4b0c365a2",
@@ -94,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "LeanCPM/terms/nominal_dates.mdx",
+                "file": "LeanCPM/calculating_schedules.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +114,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for nominal_dates"
+              "title": "Backlinks for calculating_schedules"
             }
           },
           {
@@ -113,12 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "LeanCPM/terms/nominal_dates.mdx",
+                "file": "LeanCPM/terms/issue.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from nominal_dates"
+              "title": "Outgoing links from issue"
             }
           },
           {
@@ -142,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "LeanCPM/terms/nominal_dates.mdx",
+                "file": "LeanCPM/terms/issue.mdx",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of nominal_dates"
+              "title": "Outline of issue"
             }
           },
           {
@@ -175,8 +185,7 @@
               "title": "Source Control"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
@@ -191,25 +200,41 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "tldraw:Create new tldrawing": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "edit-mdx:New .mdx file": false
     }
   },
-  "active": "70bc8d9d3e38230f",
+  "active": "92030e1fa9db391b",
   "lastOpenFiles": [
-    "LeanCPM/terms/expected_start.mdx",
-    "terms/expected_start.md",
+    "LeanCPM/terms/drag.mdx",
+    "LeanCPM/terms/Drag.mdx",
+    "LeanCPM/terms/Untitled.mdx",
+    "LeanCPM/terms/dependencies.mdx",
+    "LeanCPM/terms/early_dates.mdx",
+    "LeanCPM/terms/duration.mdx",
+    "LeanCPM/terms/Untitled.md",
+    "LeanCPM/terms/late_dates.mdx",
     "LeanCPM/terms/nominal_dates.mdx",
-    "LeanCPM/terms/status.mdx",
+    "LeanCPM/terms/expected_dates.mdx",
+    "LeanCPM/terms/actual_dates.mdx",
+    "LeanCPM/calculating_schedules.mdx",
+    "deadline.md",
+    "attachments/Pasted image 20250610125014.png",
+    "expected_dates.md",
+    "status.md",
+    "Milestones.md",
+    "New note from mobile.md",
+    "Untitled.canvas",
+    "Untitled.md",
+    "LeanCPM/terms/issue.md",
+    "LeanCPM/terms/early_dates.md",
+    "LeanCPM/terms/milestone.md",
+    "LeanCPM/terms/late_dates.md",
+    "LeanCPM/terms/task.md",
+    "LeanCPM/terms/last_scheduled.md",
+    "terms/expected_start.md",
     "terms/status.md",
-    "calculating_schedules.mdx",
-    "index.mdx",
     "terms/nominal_dates.md",
-    "LeanCPM/terms",
-    "Soft logic.md",
-    "Calculating Schedules.mdx",
-    "LeanCPM/soft-logic.mdx",
-    "LeanCPM/what-is-leanCPM.mdx",
-    "LeanCPM/incompatible/wbs.mdx",
-    "Untitled.canvas"
+    "Soft logic.md"
   ]
 }

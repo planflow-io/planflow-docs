@@ -1,0 +1,27 @@
+---
+title: Late Dates
+description: The latest possible dates a task can start and finish
+---
+Late dates are calculated in the [backwards pass](/docs/LeanCPM/calculating_schedules#backwards-pass).
+
+Late dates cannot be calculated for a task path (a set of tasks connected by dependencies) that doesn’t eventually lead to a Milestone.
+
+## Late Start
+
+`late_start`
+
+The latest date a Task can *start* is based on when its [dependents](dependencies) are finished or started, depending on the dependency type (series or parallel).
+
+## Late Finish
+
+`late_finish`
+
+The latest date a Task can finish is based on when its dependencies are finished and its duration.
+
+## Milestones
+
+Unlike Tasks, [Milestones](milestone.mdx) have a single `early_date` field. This is the soonest a Milestone can occur. 
+
+<Callout title="Legacy CPM" type="warn">
+ In legacy CPM, Milestones have an Early Start and an Early Finish, but depending on the type, only one is used.
+</Callout>

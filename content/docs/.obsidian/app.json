@@ -3,5 +3,6 @@
   "trashOption": "system",
   "useMarkdownLinks": true,
   "attachmentFolderPath": "attachments",
-  "showInlineTitle": false
+  "showInlineTitle": false,
+  "showLineNumber": false
 }

@@ -3,10 +3,30 @@ title: Status
 ---
 The options for Task Status are:
 
-| Status         | Scope | Condition                          |
-| -------------- | ----- | ---------------------------------- |
-| Not Ready      | Tasks | blocked by dependencies            |
-| Ready to Start | Tasks | No longer blocked by dependencies  |
-| Started        | Task  | User set                           |
-| Finished       | Task  | User Set                           |
-| Completed      | Task  | User Set to Finish at least 2w ago |
+| Status         | Condition                                                                                                                         | Legacy CPM equivelant |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| Not Ready      | Blocked by dependencies                                                                                                           | Not Started           |
+| Ready to Start | Not blocked by dependencies                                                                                                       | Not Started           |
+| Started        | Manually set by user                                                                                                              | In Prorgress          |
+| Finished       | Manually set by user                                                                                                              | Completed             |
+| Completed      | all dependents have started (series) or finished (parallel)                                                                       | Completed             |
+| Canceled       | Tasks and Issues are never deleted, they're just canceled and play no role in [calculating schedules](calculating_schedules.mdx). | N/A                   |
+## Milestone Status
+
+Milestones only have two statuses, that are automatically
+
+| Status   | Condition                                                     |
+| -------- | ------------------------------------------------------------- |
+| At Risk  | The deadline is on or before the [**early date**](early_date) |
+| On Track | The deadline is after the early date                          |
+| Done     | All dependents are Finished                                   |
+
+## Issue Status
+
+
+| Status      | Condition                                                                                             |
+| ----------- | ----------------------------------------------------------------------------------------------------- |
+| Identified  | The default when issues are created                                                                   |
+| In Progress | An Expected date is identified                                                                        |
+| Ready       | Manually Set by User                                                                                  |
+| Canceled    | Like Tasks, Issues are never deleted, they're just canceled and play no role in calculating schedules |
