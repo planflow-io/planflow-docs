@@ -4,6 +4,14 @@ description: The soonest possible date a task can start or finish
 ---
 These values are [calculated](calculating_schedules.mdx) based on durations and dependencies between all tasks in a project.
 
+<Callout title="As soon as possible" type="warn">
+ Legacy CPM set's nominal dates to equal [early](early_dates) dates. This means it wants you to start everything as soon as logically possible, with no regard to resource constraints.
+
+This severely limits the flexibility of your schedule. What most people do to account for this is create logic that shouldn't exist. 
+
+For example, they'll put a "Final Paint" task to succeed another "Final Paint" task, not because one can't start until the other is finished, but because there's only one paint crew and they can only work on one area at a time. The flaw here is the initial plan had Area 1 painted before Area 2 but, since its construction things happen, and Area 2 might eventually be ready first, this typically goes unnoticed until its too late.
+</Callout>
+
 ## Early Start
 
 `early_start`

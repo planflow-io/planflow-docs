@@ -2,6 +2,22 @@
 title: Issue
 description: Not exactly a task
 ---
+
+
+Issues are items that go in your schedule but represent off-site work, administrative work, or non-value added work or items.
+
+Some examples of issues:
+- Waiting on RFI response
+- Re-work
+- Submittal Turnaround
+- Procurement
+- Hurricane Prep
+- Waiting on Permit
+- Material Delivery
+
+
+Since issues can be identified early in the planning phases of a project or just before their impacts are realized, they behave differently than Tasks. 
+
 Issues are somewhat in-between Tasks & Milestones. Like tasks they have the following fields:
 
 
@@ -12,9 +28,34 @@ Issues are somewhat in-between Tasks & Milestones. Like tasks they have the foll
 | [Deadline](deadline) | late finish; calculated      |
 | Priority             |                              |
 
+## Status
+
 Identified Priority = Successor’s priority  
 In progress Priority = Successors Latest Start - Issue Expected Date - 1d
 
-Expected date = Start date  
+Deadline = Expected Finish
 Successors Early Start -1d = Early Finish  
 Successors Late Start -1d = Late Finish
+
+WE need an early, expected, and late.? Can be start or finish
+
+Late dates come from successor
+
+==Actual Start = Date created==
+
+If has a predecessor, generate early & late start from blocker, expected start from canvas.
+
+## Who can create issues
+
+The biggest problem with legacy CPM is its lack of collaboration. Schedules are created and managed in a Silo which sews distrust and distaste, sparking the Lean movement which is a rejection of CPM.
+
+Whomever is ultimately responsible for the project should also be responsible for the plan. Allowing anyone to create or delete tasks or dependencies doesn't support that notion. 
+
+However, subcontractors need a way to identify issues that prevent them from starting, proceeding with, or finishing work. Therefore, anyone can create issues. However, only the plan owner can accept or reject issues. 
+
+## Dependency requirement
+
+To crate an issue, it must be blocking an task or another issue.
+
+This requirement is necessary to calculate priority and early and late dates.
+

@@ -1,0 +1,48 @@
+---
+title: Target Dates
+description: Anticipated start and finish for
+---
+The flexibility of LeanCPM allows users to display tasks as starting and finishing on any date they choose. 
+
+<Callout title="Calculating Schedules" type="info">
+Only the expected dates of the first and last activities in a schedule are considered when calculating early and late dates.
+</Callout>
+
+## Target Start
+
+The date the user expects the task to start.
+
+## Target Finish 
+
+When the task is Not Started, this is calculated as Expected Start + Duration.
+
+When the task is Started, it’s calculated as the Actual Start + Duration
+
+
+## When Target dates lock
+
+There are a few situations for a task when its target start date is locked and cannot be changed:
+
+1. When the task is started, finished, or completed.
+2. When all of the task’s blockers are [cleared](dependencies#cleared-blockers)
+
+<Callout title="No blockers" type="info">
+ If an unstarted task has no blockers (cleared or not), its Target Start will be set to the current date. 
+
+The most common way to set a project’s first task is to attach it to a Milestone first. 
+</Callout>
+
+A task’s target dates can be unlocked by simply adding a milestone, an un-started task, or an uncleared issue as a blocker.
+
+## Expected Finish
+
+In legacy CPM, there is an “Expected Finish” field that can be changed after a task has started to help calculate the Remaining Duration. There is no concept of “Expected Finish” in Lean CPM; instead, we use [Ai-nticipated Dates](ainticipated_dates). 
+
+## Target vs Planned
+
+Legacy CPM has a concept of Planned, or Original dates, which is the same as the Early Dates but is frozen once the activity has started. This is beneficial because it shows us how late an activity started based on the last schedule update in which it hadn’t started yet. 
+
+However, there are a few shortcomings: first is we assume that activities should 
+
+This should go a step further, as it doesn’t capture the true essence of how late tasks start.
+
