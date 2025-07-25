@@ -15,7 +15,7 @@ export const baseOptions: BaseLayoutProps = {
 <path d="M16.0139 30L2 16.0139L16.0139 2L30 16.0139L16.0139 30Z" fill="CurrentColor"/>
 </svg>
 
-				Planflow
+				LeanCPM
 			</>
 		),
 	},
