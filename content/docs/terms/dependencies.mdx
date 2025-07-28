@@ -50,6 +50,13 @@ In parallel, the dependent can’t start until the task starts, and it cannot fi
 
 A string of tasks, issues, and milestones connected by dependencies. 
 
+#### Valid Dependency path
+
+Where a task has both:
+
+1. A path of blockers that eventually leads to an actual start, cleared blocker, issue, or milestone
+2. A path of dependents (successors) that eventually lead to a milestone
+
 ## Cleared Blockers
 
 These tasks with a `Finished` or `Completed` status, Issues with a `Cleared` status, or Milestones with a `Done` status, were once blocking the subject task.

@@ -1,0 +1,20 @@
+---
+title: Nominal dates
+description: What everyone sees
+---
+LeanCPM, like legacy CPM, has many date fields for each task, as seen in this guide. The nominal dates are the bottom line; they are the most important dates you share with your subcontractors and clients. 
+
+All other dates are supplemental information for you as a planner.
+
+The Start and Finish, known as the nominal dates, are usually driven by the [target dates](terms/target_dates).
+
+If a task is not in a valid dependency path, it will not have target dates.
+
+### Start
+
+When the task’s [status](status) is not set to `started`, `finished`, or `completed`, the value `start` will be set to the [target start](target_dates#target-start) date (or early start date if not in a valid dependency path). Otherwise, it will be set to the [actual start](actual_dates) date.
+
+
+## Finish
+
+When the task’s [status](status) is not set to `finished` or `completed`, the value `finish` will be set to the [target finish](target_dates#target-finish) date (or early finish date if not in a valid dependency path). Otherwise, it will be set to the [actual finish](actual_finish) date.

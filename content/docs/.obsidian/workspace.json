@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LeanCPM/calculating_schedules.mdx",
+                "file": "organizing-your-schedule/areas.mdx",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "calculating_schedules"
+              "title": "areas"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[]",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -206,23 +206,24 @@
   },
   "active": "69ae0e241eea813b",
   "lastOpenFiles": [
+    "vs-lean.mdx",
+    "vs-cpm.mdx",
+    "calculating_schedules.mdx",
+    "index.mdx",
+    "LeanCPM/terms/target_dates.mdx",
     "LeanCPM/terms/dependencies.mdx",
     "LeanCPM/calculating_schedules.mdx",
-    "terms/dependencies.md",
-    "terms",
     "LeanCPM/terms/milestone.mdx",
-    "LeanCPM/terms/status.mdx",
+    "LeanCPM/terms/deadline.mdx",
     "LeanCPM/terms/issue.mdx",
+    "LeanCPM/terms/nominal_dates.mdx",
+    "terms/dependencies.md",
     "fumadocs-payloadcms/public/payloadcms-landing-page.png",
     "fumadocs-payloadcms/public/fumadocs-landing-page.png",
-    "fumadocs-payloadcms/pnpm-lock.yaml",
     "fumadocs-payloadcms/public/netlify-turso-extension.png",
     "fumadocs-payloadcms/public/vercel-turso-integration.png",
     "fumadocs-payloadcms/public/vercel-environment-variables.png",
     "fumadocs-payloadcms/public/vercel-storage-integrations.png",
-    "fumadocs-payloadcms/src/migrations/20250724_213141.json",
-    "fumadocs-payloadcms/src/migrations/20250724_215046.json",
-    "fumadocs-payloadcms/src/migrations/20250724_213141.ts",
     "fumadocs-payloadcms/README.md",
     "fumadocs-payloadcms/public/payload-favicon.svg",
     "fumadocs-payloadcms/public/fumadocs.svg",

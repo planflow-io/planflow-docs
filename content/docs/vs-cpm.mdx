@@ -1,0 +1,83 @@
+---
+title: LeanCPM vs CPM
+---
+LeanCPM is better compared to legacy CPM rather than to Lean.
+
+CPM is a network of activities and relationships where some of the metadata is calculated using given algorithms. 
+
+## The good
+
+CPM is highly parametric. If a task is delayed, we can immediately see the downstream and second-order effects.
+
+If done correctly, you’ll always know exactly which tasks need to be worked on on any given day, and which tasks can take a back seat.
+
+## The bad
+
+CPM is complex, especially for superintendents who spend most of their day in the field and not in front of a PC. It's why Scheduling Consultants are the highest-paid professionals in the industry.
+
+Some superintendents want control over their plan, or simply don’t have the resources for a professional scheduler and will do things on their own. 
+
+Most of the time, they spin their wheels to get nowhere. The rest can create a plan, but it’s almost always riddled with logic busts or poor quality issues, exposing the project to litigation.
+
+<Cards>
+  <Card title="Construction's biggest problem" href="https://danny.miami/problem" />
+
+</Cards>
+## The ugly
+
+The Gantt chart UI encourages planners to create poor quality schedules, promotes working in a silo, and outright confuses everyone.
+
+
+--- 
+
+## What are the high-level differences?
+
+> The main flaw we try to fix with legacy CPM is *the why*.
+
+### 1. Relationships
+
+Relationships are the links between activities. In legacy CPM, there are four types of relationships: FS, SS, FF, and SF.
+
+In LeanCPM, we refer to relationships as dependencies, and there are only two types of dependencies: series and parallel.
+- **Series**: A blocker must finish before the blocked task can start; lag is not allowed
+- **Parallel**: A start-start _and_ finish-finish relationship with an optional lag
+
+### 2. Constraints
+
+Tasks do not have constraints. A constraint in legacy CPM is a hard date, usually fixed by an outside force, whereby tasks are constrained to. The 
+
+In LeanCPM, instead of arbitrarily constraining a task, we introduce a new concept called Issues. Issues are similar to tasks, but with a few key differences.
+
+1. They don’t always have a start date
+2. Anyone can create them (but must be accepted by a planner)
+
+A milestone can also be used as a constraint.
+### 3. Milestones 
+
+In LeanCPM, all milestones have Target dates, which are used to calculate early and late dates.
+
+Milestones must be in series with their dependencies.
+
+### 4. No Data Date or schedule button
+
+Two relics from the past where schedulers used to travel to jobsites and then several days later return to their computer to update the schedule.
+
+Since LeanCPM is intended to be used by the boots on the ground synchronously, there is no need for this. 
+
+### 5. Priority instead of Total Float
+
+Total Float is used to make sure no one finishes early.
+
+LeanCPM uses total float, among other factors, to calculate priority. 
+
+Drag, the opposite of float, refers to the number of days by which moving the task’s target finish date earlier would also advance its milestone by the same amount.
+
+### 6. Target Dates
+
+LeanCPM allows the planner to set target dates within the early and late dates for any given task with a [valid dependency path](terms/dependencies#valid-dependency-path)
+
+### 7. Soft logic
+
+This is our definition of [constraints](terms/constraints): a set of tasks that cannot be worked on simultaneously. It’s up to the planner to determine which happens first, based on their preference for sorting.
+
+
