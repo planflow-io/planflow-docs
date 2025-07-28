@@ -4,15 +4,74 @@ description: A significant moment in time
 ---
 In LeanCPM, a milestone is a significant point or event in a project that marks the completion of a major deliverable or phase. It represents a clear checkpoint in the project timeline and is used to track progress and ensure that the project stays on schedule. Milestones have zero duration.
 
-There are two types of Milestones: Start & Finish.
+Milestones play a more significant role here than they do in legacy CPM. 
+
+> Milestones are used to calculate the early and late dates for tasks and issues.
+
+## Substantial Completion
+
+This milestone is a part of every project and represents the point at which the project should be completed.
+
+## Dependencies
+Since Milestones represent a point in time when something can or will start or finish, they can only be in series with issues or tasks.
+
+<Callout title="Legacy CPM" type="info">
+ Remember, an “in series” dependency is just like a Finish-to-Start (FS) relationship in legacy CPM.
+</Callout>
+
+This means that milestones cannot occur concurrently with their dependencies.
+
+## Target Dates
+
+Like tasks, milestones have target dates that the planner manually sets. These dates are used in the schedule calculation and thus drive the Early and Late dates for their dependencies.
+
+## Early and Late Dates
+
+Since milestones are used to set early and late dates for tasks, their early and late dates must be calculated differently.
+
+In essence, these are the exact early and late dates from legacy CPM.
+
+## Deadlines
+
+Deadlines are different than Target dates. While Target dates represent your near-term objectives, Deadlines represent the project’s goals, typically defined at the project’s inception or after a significant change resets expectations (e.g., an approved change order that alters the project’s end date).
+
+Deadlines are not used in schedule calculations; they are provided for reference purposes.
+
+Deadlines should fall between the early and late dates.
+
+### Why deadlines instead of late dates?
+
+It makes sense that the latest possible date for a milestone is the deadline. However, the late dates (and early dates) are calculated based on the “Substantial Completion” Milestone
 
 ## Start Milestone
+
+Start Milestones occur the day after their blockers are finished, and the same day as their dependents start.
+
+
 These have the following fields:
 
 
-|                  | Early Start | Target Start | Late Start | Early Finish | Target Finish | Late Finish |
-| ---------------- | ----------- | ------------ | ---------- | ------------ | ------------- | ----------- |
-| Start Milestone  | ✅           | ✅            | ✅          |              |               |             |
-| Finish Milestone |             |              |            | ✅            | ✅             | ✅           |
+|                  | Early Start | Target Start | Late Start | Early Finish | Target Finish | Late Finish | Deadline |
+| ---------------- | ----------- | ------------ | ---------- | ------------ | ------------- | ----------- | -------- |
+| Start Milestone  | ✅           | ✅            | ✅          |              |               |             | ✅        |
+| Finish Milestone |             |              |            | ✅            | ✅             | ✅           | ✅        |
+
+## Types
+
+Types are an optional field for Milestones. We recommend software vendors ship their applications with some pre-defined fields. This allows organizations to track the progress of their projects compared to other projects.
+
+Some potential default milestone types:
+- NTP (Notice to Proceed)
+- Construction Start*
+- Foundations Complete
+- Top Out (Superstructure complete)
+- Permanent Power
+- Permanent Air
+- Dry In
+- Substantial Completion*
+- Turnover
+- Inspection
+
+Each milestone should be of just one type, however each type should be allowed to be used more than once. 
 
 

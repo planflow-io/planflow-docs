@@ -9,13 +9,14 @@ Calculating schedules in LeanCPM is slightly different than in legacy CPM.
 
 1. There is no concept of constraints (As soon as possible, Start no earlier than, etc.)
 2. There is no data date, only Today
-3. [Nominal](terms/nominal_dates) Start & Finish dates are independent of schedule calculations
-4. There are only two types of dependencies (relationships)
+3. Every milestone has a target date, used to calculate the earliest and latest dates by which all tasks can occur.
+4. Nominal dates (default Start & Finish) use manually entered ‘Target’ dates instead of early dates.
+5. There are only two types of dependencies (relationships)
 	- **Series**: A blocker must finish before the blocked task can start; lag is not allowed
-	- **Parallel**: A start-start and finish-finish relationship with an optional lag
-5. Milestones can only be in series with their dependents and dependencies
-6. Schedules are calculated in days, not minutes or seconds.
-7. Issues are 
+	- **Parallel**: A start-start *and* finish-finish relationship with an optional lag
+6. Milestones can only be in series with their dependents and dependencies
+7. Schedules are calculated in days, not minutes or seconds.
+8. Issues are a mix between milestones and tasks
 
 
 ## What exactly is calculated?
@@ -42,62 +43,54 @@ Calculating schedules in LeanCPM is slightly different than in legacy CPM.
 
 Anything that has a “canceled” [status](status) is not considered in the calculation.
 
-In LeanCPM, any task, regardless of status, whose nominal Start or Finish is before Today isn’t used for the calculation; however, any residual calculated [fields](#what-exactly-is-calculated) from previous calculations will remain and be used for current calculations.
-
-For example, if Task A was set to start next week with an early start of today and the schedule were calculated today, all of the relevant fields from above would be calculated. Fast-forward two weeks, and the schedule hasn’t been calculated since, but is now triggered. Task 2 will still show an early start of one week ago.
-
-## What is required
-
-To figure out the soonest a task can start (early start), we must look at its blockers. The soonest a task can start is right after the soonest its blocker can finish (or start if it's in parallel).
-
-If an un-started task has no blockers, we shouldn’t assume it can start now. However, if it has blockers that are cleared, we should assume it is ready and can start as early as today.
-
-<Callout title="Cleared blockers" type="info">
-A cleared blocker is a task or issue that *was* blocking another task or issue but is no longer because it or the task it’s blocking has already started or finished, depending on its dependency type.
-</Callout>
-
-
-If you look at a given task’s blocker, then its blocker, and so on, you eventually get to a task without a blocker. Since tasks in LeanCPM don’t have constraints, it’s impossible to find the earliest a task can occur without either a cleared blocker, a [milestone](terms/milestone), or an [issue](terms/issue) that kicks off the dependency path.
-
-The same is true when calculating late dates. 
-
-Therefore, in a given [dependency path](terms/dependencies#dependency-path), it'll be impossible to calculate the total float, drag, and priority of the tasks that are not between a cleared blocker, milestone, or issue.
-
---- 
-
-## Identify tasks & issues with unknown priority
-
-Priority is a concept new to LeanCPM. It takes into account data factors such as Free Float and Total Float to calculate priority, without disclosing information that could mislead the team.
-
-Tasks and issues with unknown priority are automatically excluded from the schedule calculation for the reason outlined in the previous section. 
-
-How are these tasks and issues identified? 
-
-
-
 ---
 ## Needs update
 
-Since there is no data date and therefore no "progress spotlight", we need a way to identify tasks whose progress may be stale and need to be updated. Fortunatlley, this is easy.
+Since there is no data date and therefore no “progress spotlight”, we need a way to identify tasks whose progress may be stale and need to be updated. Fortunately, this is easy.
 
-First, any tasks with a target start
+First, any unstarted task with a target start before today needs an update.
+
+Second, any unfinished task with a target finish date that is before the current date needs an update.
 
 --- 
 
+## What is required
+
+#### Earliest dates
+The earliest a task can start is right after the earliest its *driving* blocker can finish (or start if it’s in parallel).
+
+To calculate the earliest a task can start, we must examine a given task’s blocker, then its blocker, and so on, until we eventually reach a task without a blocker. Since tasks in LeanCPM don’t have constraints, it’s impossible to determine the earliest a task can occur without a milestone or an issue that initiates the dependency path.
+
+> What about tasks that have [cleared blockers](terms/dependencies#cleared-blockers)? 
+
+These are considered `Ready to Start` and have an early start as of the current date or the Target Date, whichever is earlier (see 'Needs Update' above).
+
+> What about tasks with no blockers at all?
+
+Unless they are already started or their Target Start is the current date, it is impossible to figure out the early start.
+
+#### Latest dates
+
+All tasks must have dependent tasks that eventually lead to a Milestone; otherwise, it'll be impossible to figure out the latest they can start or finish.
+
+Therefore, in a given [dependency path](terms/dependencies#dependency-path), it’ll be impossible to calculate the total float, drag, and priority of the tasks that are not between a cleared blocker, milestone, or issue.
+
+--- 
 ## Forwards Pass - Calculate Early Dates
 
 Early dates are the earliest a task can start.
 
-### Step 1: Tasks with no blockers
+### Step 1: Unstarted Tasks with no blockers
 
-#### A. Start is after Today
-We can't assume these can start earlier than what the user set as expected.
+#### A. Target Start is after Today
+
+We can’t assume these can start earlier than what the user set as expected.
 
 1. Clear Early Dates
 
-#### B. Start is before Today, Finish is after
+#### B. Target Start is before Today, Finish is after
 
-1. Set `early_finish = expected_finish` (user-generated)
+1. Set `early_finish = target_finish` (user-generated)
 
 #### C. Milestones before Today
 

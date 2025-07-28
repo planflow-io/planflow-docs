@@ -5,7 +5,7 @@ description: aka "Relationships". Blockers and Blocked.
 
 ## Dependency Types
 
-One of LeanCPM’s superpowers is in its simplicity.  Two types of dependencies, Series and Parallel, make creating schedules easy and powerful.
+One of LeanCPM’s key strengths is its simplicity.  Two types of dependencies —Series and Parallel —make creating schedules easy and powerful.
 
 ### Series
 
@@ -16,25 +16,35 @@ If you’re familiar with legacy CPM, this is a simple Finish-to-Start relations
 Lag, the desired time between the finish and start, is not supported in series.
 
 ### Parallel
-Tasks in parallel happen at the same time. However, there is always a leader; the first must start before the second can start, AND the first must finish before the second can.
+Tasks in parallel are worked on simultaneously. However, there is always a leader; the first must start before the second can start, AND the first must finish before the second can finish.
 
 If you’re familiar with legacy CPM, this is a Start-to-Start (SS) AND a Finish-to-Finish relationship.
 
-Lag can be added to the start side of the parallel. 
-
+Lag can be added to the start side of the parallel, but shouldn’t exceed the duration of the first task. 
 
 ## Dependency Sides
 
 Each Dependency has two sides:
 1. The blocker
-2. The blocked
+2. The dependent
 
-## The blocker
-The blocker, known as the “predecessor” in legacy CPM, is the task that 
+==Every task should be a blocker and a dependent.==
 
-<Callout title="Constraints in Legacy CPM" type="info">
-Activities are 
-</Callout>
+Dependency sides are like relationships; who we are depends on the subject. For example, I am Ethan’s father, but I am also Mourad’s son. `Hang & Finish Walls` is dependent on `In-Wall Inspection`, but it is also the blocker of `Prime and Paint`.
+
+### The blocker
+
+The blocker, known as the “predecessor” in legacy CPM, is the task that must finish before the task being blocked can start, in series. 
+
+In parallel, the blocker must start before the task can start AND finish before the task can finish.
+
+### The dependent
+
+The dependent, known as the “successor” in legacy CPM, is the task that is being blocked.
+
+In a series, the dependent task cannot start until the task finishes.
+
+In parallel, the dependent can’t start until the task starts, and it cannot finish until the task finishes.
 
 ## Dependency Path
 
@@ -42,14 +52,17 @@ A string of tasks, issues, and milestones connected by dependencies.
 
 ## Cleared Blockers
 
+These tasks with a `Finished` or `Completed` status, Issues with a `Cleared` status, or Milestones with a `Done` status, were once blocking the subject task.
+
+If all blockers of a task are cleared, then the task’s Target dates are locked.
 
 ## Driving vs Non-driving
 
-
-## Critical Blocker
-
+A driving dependency is one that, if removed, would either:
+1. change the Free Float of the task or
+2. change the Total Float of the task
 
 
 ## FAQ
 How do I show concrete curing? I usually use an FS+lag, but now I can't?
-You can! We recommend adding an extra day for curing in your `Pour and Finish` Task
+You can! We recommend adding an extra day for curing in your `Pour and Finish` Task and renaming it to `Pour, Finish, Cure`.

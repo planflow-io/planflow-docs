@@ -8,36 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "92030e1fa9db391b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "LeanCPM/calculating_schedules.mdx",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": true,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": true,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "calculating_schedules"
-            }
-          },
-          {
             "id": "69ae0e241eea813b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LeanCPM/terms/issue.mdx",
+                "file": "LeanCPM/calculating_schedules.mdx",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "issue"
+              "title": "calculating_schedules"
             }
           }
         ]
@@ -228,22 +204,31 @@
       "edit-mdx:New .mdx file": false
     }
   },
-  "active": "a76f150c86c7aaf6",
+  "active": "69ae0e241eea813b",
   "lastOpenFiles": [
-    "LeanCPM/terms/target_dates.mdx",
-    "LeanCPM/terms/ainticipated_dates.mdx",
-    "LeanCPM/terms/slack.mdx",
-    "LeanCPM/terms/activity_log.mdx",
-    "terms/expected_dates.md",
+    "LeanCPM/terms/dependencies.mdx",
+    "LeanCPM/calculating_schedules.mdx",
     "terms/dependencies.md",
     "terms",
-    "LeanCPM/terms/constraints.mdx",
-    "LeanCPM/terms/priority.mdx",
-    "terms/nominal_dates.md",
-    "organizing-your-schedule/timeline-matrix.mdx",
-    "organizing-your-schedule/Untitled.mdx",
-    "LeanCPM/terms/issue.mdx",
     "LeanCPM/terms/milestone.mdx",
+    "LeanCPM/terms/status.mdx",
+    "LeanCPM/terms/issue.mdx",
+    "fumadocs-payloadcms/public/payloadcms-landing-page.png",
+    "fumadocs-payloadcms/public/fumadocs-landing-page.png",
+    "fumadocs-payloadcms/pnpm-lock.yaml",
+    "fumadocs-payloadcms/public/netlify-turso-extension.png",
+    "fumadocs-payloadcms/public/vercel-turso-integration.png",
+    "fumadocs-payloadcms/public/vercel-environment-variables.png",
+    "fumadocs-payloadcms/public/vercel-storage-integrations.png",
+    "fumadocs-payloadcms/src/migrations/20250724_213141.json",
+    "fumadocs-payloadcms/src/migrations/20250724_215046.json",
+    "fumadocs-payloadcms/src/migrations/20250724_213141.ts",
+    "fumadocs-payloadcms/README.md",
+    "fumadocs-payloadcms/public/payload-favicon.svg",
+    "fumadocs-payloadcms/public/fumadocs.svg",
+    "fumadocs-payloadcms/public/favicon.svg",
+    "terms/expected_dates.md",
+    "terms/nominal_dates.md",
     "LeanCPM/terms/Untitled.md",
     "deadline.md",
     "attachments/Pasted image 20250610125014.png",
