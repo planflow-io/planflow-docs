@@ -1,8 +1,6 @@
 ---
 title: LeanCPM vs CPM
 ---
-LeanCPM is better compared to legacy CPM rather than to Lean.
-
 CPM is a network of activities and relationships where some of the metadata is calculated using given algorithms. 
 
 ## The good
@@ -13,9 +11,9 @@ If done correctly, you’ll always know exactly which tasks need to be worked on
 
 ## The bad
 
-CPM is complex, especially for superintendents who spend most of their day in the field and not in front of a PC. It's why Scheduling Consultants are the highest-paid professionals in the industry.
+CPM is complex, especially for superintendents who spend most of their day in the field and not in front of a PC. It’s why Scheduling Consultants are the highest-paid professionals in the industry.
 
-Some superintendents want control over their plan, or simply don’t have the resources for a professional scheduler and will do things on their own. 
+Some superintendents want control over their plan, or simply don’t have the resources for a professional scheduler and will manage their schedules independently. 
 
 Most of the time, they spin their wheels to get nowhere. The rest can create a plan, but it’s almost always riddled with logic busts or poor quality issues, exposing the project to litigation.
 
@@ -34,17 +32,20 @@ The Gantt chart UI encourages planners to create poor quality schedules, promote
 
 > The main flaw we try to fix with legacy CPM is *the why*.
 
+ LeanCPM is designed for individuals who work in the field and lack the time to learn the theory and science behind a flawed system.
+
 ### 1. Relationships
 
-Relationships are the links between activities. In legacy CPM, there are four types of relationships: FS, SS, FF, and SF.
+Relationships are the links between activities. Legacy CPM has four types of relationships: FS, SS, FF, and SF.
 
-In LeanCPM, we refer to relationships as dependencies, and there are only two types of dependencies: series and parallel.
+LeanCPM has dependencies instead of relationships, and there are only two types: 
+
 - **Series**: A blocker must finish before the blocked task can start; lag is not allowed
 - **Parallel**: A start-start _and_ finish-finish relationship with an optional lag
 
 ### 2. Constraints
 
-Tasks do not have constraints. A constraint in legacy CPM is a hard date, usually fixed by an outside force, whereby tasks are constrained to. The 
+Tasks do not have constraints. A constraint in legacy CPM is a hard date, usually fixed by an outside force, that constrains tasks. The why is often missing, and it’s impossible to track changes. 
 
 In LeanCPM, instead of arbitrarily constraining a task, we introduce a new concept called Issues. Issues are similar to tasks, but with a few key differences.
 
@@ -52,6 +53,7 @@ In LeanCPM, instead of arbitrarily constraining a task, we introduce a new conce
 2. Anyone can create them (but must be accepted by a planner)
 
 A milestone can also be used as a constraint.
+
 ### 3. Milestones 
 
 In LeanCPM, all milestones have Target dates, which are used to calculate early and late dates.

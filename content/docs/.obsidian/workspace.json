@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "organizing-your-schedule/areas.mdx",
+                "file": "organizing-your-schedule/goals.mdx",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,85 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "areas"
+              "title": "goals"
+            }
+          },
+          {
+            "id": "e470583276ed7f64",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "calculating_schedules.mdx",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "calculating_schedules"
+            }
+          },
+          {
+            "id": "ea88c4b0952c50d1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.mdx",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "index"
+            }
+          }
+        ]
+      },
+      {
+        "id": "a0a005717deb12f3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4b78564cf7ed73ef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.mdx",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "index"
             }
           }
         ]
@@ -206,17 +284,17 @@
   },
   "active": "69ae0e241eea813b",
   "lastOpenFiles": [
+    "meta.json",
+    "organizing-your-schedule/meta.json",
+    "LeanCPM/meta.json",
+    "terms/meta.json",
+    "index.mdx",
+    "organizing-your-schedule/goals.mdx",
+    "organizing-your-schedule/areas.mdx",
     "vs-lean.mdx",
     "vs-cpm.mdx",
     "calculating_schedules.mdx",
-    "index.mdx",
-    "LeanCPM/terms/target_dates.mdx",
-    "LeanCPM/terms/dependencies.mdx",
     "LeanCPM/calculating_schedules.mdx",
-    "LeanCPM/terms/milestone.mdx",
-    "LeanCPM/terms/deadline.mdx",
-    "LeanCPM/terms/issue.mdx",
-    "LeanCPM/terms/nominal_dates.mdx",
     "terms/dependencies.md",
     "fumadocs-payloadcms/public/payloadcms-landing-page.png",
     "fumadocs-payloadcms/public/fumadocs-landing-page.png",

@@ -2,7 +2,6 @@
 title: Areas
 description: Categories for organizing tasks.
 ---
-
 Areas are categories for organizing tasks in LeanCPM. They help structure the project and make it easier to navigate and manage tasks.
 
 
@@ -10,10 +9,8 @@ Areas are categories for organizing tasks in LeanCPM. They help structure the pr
 
 If you’re familiar with Activity Codes from Primavera or SureTrak, then the concept here is very similar.
 
-
-
 ## Areas
-While not required, we recommend that all projects use a standard or template list of Areas and that software providers display them in a Kanban view.
+While not required, we recommend that all projects use a standard or template list of Areas and that software providers display them in a Kanban view. The reason for using the same list is the ability to compare projects. While every project is different, structured data is structured data. The fast and loose style of WBS is preventing valuable anylitics.
 
 Here’s a standard list of Areas we recommend every project start with:
 
@@ -70,14 +67,27 @@ Some standard elevations:
 - East
 - NorthWest
 
+### Location
+
+We recommend using an agnostic identifier that works for most areas. 
+
+- Above Ceiling
+- In Wall
+- Finishes
+- 
+
 ## Why do it this way
 
 The primary issue with traditional CPM is the scarcity of historical data. This is partly due to the lack of structured data. **Isn’t it ironic that the Work Breakdown *Structure* isn’t structured?**
 
-The advantage of Area labels is twofold:
+The advantages of Area labels:
 1. We can automatically add them when appropriate
 2. We can selectively show them when appropriate
+3. Better historical data
+4. Less redundancy
 
 For example, when you’re in a view that is for the `#2nd Floor` only, any tasks that are added to this view automatically get the `2nd Floor` tag. 
 
-When in any view that doesn't filter for just the `#2nd Floor`, tasks added in the previous view will display the words “2nd Floor” appended or prepended to the task name by default.
+When in any view that doesn’t filter for just the `#2nd Floor`, tasks added in the previous view will display the words “2nd Floor” appended or prepended to the task name by default.
+
+
