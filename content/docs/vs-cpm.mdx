@@ -36,7 +36,7 @@ The Gantt chart UI encourages planners to create poor quality schedules, promote
 
 ### 1. Relationships
 
-Relationships are the links between activities. Legacy CPM has four types of relationships: FS, SS, FF, and SF.
+Relationships are the links between activities. Legacy CPM has four types of relationships: Finish-Start (FS), Start-Start (SS), Finish-Finish (FF), and Start-Finish (SF).
 
 LeanCPM has dependencies instead of relationships, and there are only two types: 
 
@@ -45,12 +45,14 @@ LeanCPM has dependencies instead of relationships, and there are only two types:
 
 ### 2. Constraints
 
-Tasks do not have constraints. A constraint in legacy CPM is a hard date, usually fixed by an outside force, that constrains tasks. The why is often missing, and it’s impossible to track changes. 
+Tasks do not have constraints. A constraint in legacy CPM is a hard date, usually fixed by an outside force, that forces a task to start or finish on, before, or after the hard date. The why is often missing, and it’s impossible to track changes to the constraints over the project life cycle.
 
-In LeanCPM, instead of arbitrarily constraining a task, we introduce a new concept called Issues. Issues are similar to tasks, but with a few key differences.
+In LeanCPM, instead of arbitrarily constraining a task, we introduce a new concept called Issues. Issues are similar to tasks but with a few key differences.
 
 1. They don’t always have a start date
 2. Anyone can create them (but must be accepted by a planner)
+
+More importantly, issues can have a fixed end date among other differences since they represent off-site or non-value-added work.
 
 A milestone can also be used as a constraint.
 
@@ -62,17 +64,19 @@ Milestones must be in series with their dependencies.
 
 ### 4. No Data Date or schedule button
 
-Two relics from the past where schedulers used to travel to jobsites and then several days later return to their computer to update the schedule.
+Two relics from the past where schedulers used to travel to jobsites and then, several days later, return to their computer to update the schedule.
 
-Since LeanCPM is intended to be used by the boots on the ground synchronously, there is no need for this. 
+Since LeanCPM is intended to be used by the boots on the ground synchronously, there is no need for this. The schedule is always up to date. 
 
 ### 5. Priority instead of Total Float
 
-Total Float is used to make sure no one finishes early.
-
-LeanCPM uses total float, among other factors, to calculate priority. 
+Total Float is the difference between Late dates and Early dates. It is used to make sure no one finishes early.
 
 Drag, the opposite of float, refers to the number of days by which moving the task’s target finish date earlier would also advance its milestone by the same amount.
+
+LeanCPM uses total float, drag, risk, earned value, historical performance, and other factors to calculate priority. 
+
+[Priority](terms/priority) is a widely understood concept (vs any of its inputs). 
 
 ### 6. Target Dates
 

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "organizing-your-schedule/goals.mdx",
+                "file": "organizing-your-schedule/timeline-matrix.mdx",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "goals"
+              "title": "timeline-matrix"
             }
           },
           {
@@ -284,17 +284,18 @@
   },
   "active": "69ae0e241eea813b",
   "lastOpenFiles": [
+    "organizing-your-schedule/goals.mdx",
+    "organizing-your-schedule/checkpoints.mdx",
+    "attachments/Pasted image 20250819155928.png",
     "meta.json",
     "organizing-your-schedule/meta.json",
     "LeanCPM/meta.json",
     "terms/meta.json",
     "index.mdx",
-    "organizing-your-schedule/goals.mdx",
     "organizing-your-schedule/areas.mdx",
     "vs-lean.mdx",
     "vs-cpm.mdx",
     "calculating_schedules.mdx",
-    "LeanCPM/calculating_schedules.mdx",
     "terms/dependencies.md",
     "fumadocs-payloadcms/public/payloadcms-landing-page.png",
     "fumadocs-payloadcms/public/fumadocs-landing-page.png",
@@ -310,7 +311,6 @@
     "terms/nominal_dates.md",
     "LeanCPM/terms/Untitled.md",
     "deadline.md",
-    "attachments/Pasted image 20250610125014.png",
     "expected_dates.md",
     "status.md",
     "Milestones.md",

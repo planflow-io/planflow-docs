@@ -9,14 +9,15 @@ Calculating schedules in LeanCPM is slightly different than in legacy CPM.
 
 1. There is no concept of constraints (As soon as possible, Start no earlier than, etc.)
 2. There is no data date, only Today
-3. Every milestone has a target date, used to calculate the earliest and latest dates by which all tasks can occur.
-4. Nominal dates (default Start & Finish) use manually entered ‘Target’ dates instead of early dates.
-5. There are only two types of dependencies (relationships)
+3. No option for “Retained Logic”. Use issues to stop work.
+4. Every milestone has a target date, used to calculate the earliest and latest dates by which all tasks can occur.
+5. Nominal dates (default Start & Finish) use manually entered ‘Target’ dates instead of early dates.
+6. There are only two types of dependencies (relationships)
 	- **Series**: A blocker must finish before the blocked task can start; lag is not allowed
 	- **Parallel**: A start-start *and* finish-finish relationship with an optional lag
-6. Milestones can only be in series with their dependents and dependencies
-7. Schedules are calculated in days, not minutes or seconds.
-8. Issues are a mix of milestones and tasks
+7. Milestones can only be in series with their blockers and those they blocked.
+8. Schedules are calculated in days, not minutes or seconds.
+9. Issues are used instead of constraints to limit a date.
 
 
 ## What exactly is calculated?
@@ -71,7 +72,7 @@ Unless they are already started or their Target Start is the current date, it is
 
 #### Latest dates
 
-All tasks must have dependent tasks that eventually lead to a Milestone; otherwise, it'll be impossible to figure out the latest they can start or finish.
+All tasks must have blocked tasks that eventually lead to a Milestone; otherwise, it’ll be impossible to determine the latest start and finish dates.
 
 Therefore, in a given [dependency path](terms/dependencies#dependency-path), it’ll be impossible to calculate the total float, drag, and priority of the tasks that are not between a cleared blocker, milestone, or issue.
 
@@ -84,7 +85,7 @@ Early dates are the earliest a task can start.
 
 #### A. Target Start is after Today
 
-We can’t assume these can start earlier than what the user set as expected.
+We can’t assume these can start earlier than the user's expected start time.
 
 1. Clear Early Dates
 
@@ -125,22 +126,22 @@ These tasks can’t start until the tasks blocking them also start; sometimes, t
 
 Iterate through each constraint bucket, find any conflicts. If a conflict exists 
 
-### Step 5: Move onto Backwards Pass
+### Step 5: Move on to Backwards Pass
 
 ---
-## Backwards Pass - Calculate Late dates
+## Backwards Pass - Calculate Late dates.
 
-Late dates are the latest a task can occur
+Late dates are the latest a task can occur.
 
 <Callout title="Unknown Priority" type="error">
  Any task or issue that doesn't eventually lead to a milestone has an unknown priority
 </Callout>
 1. Set late dates to null
-2. Find all tasks without a dependent (successor)
+2. Find all tasks that do not block anything (aka tasks that do not have a successor)
 	a. for each:
-		set `priority` to `unknown`
-		set  late_finish to finish (user-generated)
-		set late_start = late_finish - duration
+		Set `priority` to `unknown`
+		Set  `late_finish` to `finish` (user-generated)
+		Set `late_start` = `late_finish` - `duration`
 		
 
 
